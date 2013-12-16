@@ -1,0 +1,260 @@
+body {
+	margin: 0; padding: 0;
+	font-family: 'Iceland', cursive;
+	font-size: 22px;
+	background-color: #222244;
+	color: #eee;
+}
+
+ol,ul {
+	display: block; padding: 0; margin: 0; list-style: none;
+}
+ol > li, ul > li {
+	display: block;
+}
+
+body > * {
+	display: none;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Macondo Swash Caps', cursive;
+}
+h1 > .subtitle {
+	display: none;
+	font-size: 50%;
+}
+
+a {
+	color: #bbccff;
+}
+
+button {
+	display: block;
+	font-family: 'Macondo Swash Caps', cursive;
+	font-size: 100%;
+	background-color: #222244;
+	color: white;
+	border: solid 0.2em white;
+	padding: 0.5em 1em;
+	margin: 0.5em;
+	border-radius: 1em;
+	box-shadow: 0 0.5em 1em rgba(0,0,0,0.5);
+	cursor: pointer;
+	outline: none;
+}
+button:hover {
+	background-color: #333355;
+}
+
+#notifications {
+	position: absolute; z-index: 20;
+	top: 0; right: 0;
+	display: block;
+}
+#notifications > ol > li {
+	padding: 1em;
+	margin: 0.5em;
+	position: relative;
+	background-color: rgba(255,255,200,0.8);
+	border-radius: 0.5em;
+	color: black;
+	cursor: pointer;
+}
+#notifications > ol > li:hover:after {
+	content: "X";
+	display: block;
+	padding: 0.25em 0.5em;
+	position: absolute;
+	right: 0; top: 0;
+}
+
+#loading {
+	display: none;
+	margin: 10% auto;
+	padding: 2em 0;
+	background-color: #111133;
+}
+
+nav#mainMenu {
+	display: none;
+	width: 50%;
+	min-width: 20em;
+	margin: 10% auto;
+	text-align: center;
+}
+nav#mainMenu > button {
+	display: block;
+	width: 100%;
+}
+
+.instructions ul {
+	text-align: left;
+	list-style: circle;
+	padding-left: 2em;
+	margin: 1em 0;
+}
+.instructions ul > li {
+	display: list-item;
+	margin-bottom: 0.5em;
+}
+
+
+nav#floater {
+	position: absolute; z-index: 100;
+	top: 0; left: -1000;
+	padding: 0.5em;
+	background-color: rgba(34,34,68,0.5);
+	border: solid 0.2em rgba(255,255,255,0.5);
+	border-radius: 0.5em;
+	box-shadow: 0 1em 2em rgba(0,0,0,0.5);
+	transition-property: all;
+	transition-duration: 0.5s;
+}
+
+
+
+
+#map {
+	display: none;
+	position: relative;
+	/* border: solid 1px black; */
+	width: 95%;
+	margin: 0 2.5%;
+	height: 600px;
+	color: black;
+	background-color: white;
+	box-shadow: 0 0 1em rgba(0,0,0,0.5);
+	overflow: auto;
+	background: #1e5799;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(46%,#207cca), color-stop(53%,#2989d8), color-stop(100%,#7db9e8));
+	
+}
+
+#map .plots ol {
+	position: absolute;
+	bottom: 0px; left: 0;
+	height: 100px;
+	width: 100%;
+}
+
+#map li.plot {
+	float: left;
+	padding: 1em 0;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 1em;
+}
+#map li.plot:nth-child(odd) {
+	/* background-color: rgba(255,255,255,0.02); */
+}
+
+
+#map li.plot .owner {
+	display: none;
+	color: white;
+}
+#map li.plot.yours {
+	box-shadow: inset 0 0 1em rgba(255,255,255, 0.025);
+	background-color: rgba(255,255,255,0.05);
+}
+#map li.plot.yours .owner {
+	display: block;
+}
+/* plot hover */
+#map li.plot:hover {
+	background-color: rgba(255,255,255,0.1);
+	/* text-shadow: 0 0 0.5em white; */
+}
+#map li.plot.city1:hover {
+	background-color: rgba(255,100,100,0.25);
+	box-shadow: inset 0 0 1em rgba(255,0,0, 0.9);
+}
+#map li.plot.city2:hover {
+	background-color: rgba(100,255,100,0.25);
+	box-shadow: inset 0 0 1em rgba(0,255,0, 0.9);
+}
+#map li.plot.city3:hover {
+	background-color: rgba(100,100,255,0.25);
+	box-shadow: inset 0 0 1em rgba(0,0,255, 0.9);
+}
+
+#map li.plot:hover .owner {
+	display: block;
+}
+
+
+
+#map .ground {
+	background: green;
+	position: absolute;
+	bottom: -100px; left: 0;
+	height: 200px;
+	width: 100%;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1b8746), color-stop(24%,#0b491c), color-stop(40%,#2c3518), color-stop(100%,#665b40));
+	border-top: solid 3px #006600;
+}
+
+#map .persons > ul > li {
+	display: block;
+	position: absolute; z-index: 5;
+	bottom: 100px;
+	height: 50px;
+	width: 50px;
+	border-radius: 1em 1em 0.5em 0.5em;
+	border: solid 3px #333;
+	background-color: rgba(200,100,0,0.5);
+	text-align: center;
+	box-shadow: inset 0 -0.5em 1em rgba(0,0,0,0.5);
+	transition-property: all;
+	transition-duration: 1.5s;
+}
+#map .persons .face {
+	font-size: 200%;
+	font-weight: bold;
+	margin-top: -0.25em;
+}
+#map .persons .name {
+	margin-top: 0;
+	font-size: 60%;
+	color: white;
+	text-shadow: 1px 1px 0 black;
+}
+
+#map .floors ul > li {
+	display: block;
+	position: absolute;
+	background-color: rgba(255,255,0,0.5);
+	text-align: center;
+}
+#map li.floor {
+	cursor: pointer;
+	border: solid 3px #330;
+}
+#map li.floor:hover {
+	box-shadow: 0 0 2em rgba(255,255,255, 0.5), 0 0 0.2em black;
+}
+#map li.floor.type_R {
+	background-color: rgba(200,255,0,0.5);
+}
+#map li.floor.type_C {
+	background-color: rgba(255,255,100,0.5);
+}
+
+
+#stats {
+	display: none;
+	position: absolute; z-index: 9;
+	top: 3em; left: 2em;
+	padding: 0.5em;
+	background-color: rgba(255,255,255,0.1);
+	border: solid 1px rgba(255,255,255,0.2);
+	border-radius: 0.5em;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+#stats > ul {
+	border-top: solid 1px rgba(255,255,255,0.2);
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+}
