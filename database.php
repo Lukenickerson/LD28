@@ -370,7 +370,7 @@
 					return "Too high!";
 				} else {
 			
-					if ($personsCoins > $GAME["buildCost"]) {
+					if ($personsCoins >= $GAME["buildCost"]) {
 						setPersonCoins($personId, ($personsCoins - $GAME["buildCost"]));
 						$sql = "INSERT INTO floor (plot_id, surface_y, floor_type_key, capacity, rent, wages)"
 							. " VALUES ("

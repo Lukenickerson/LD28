@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `planet` (
 --
 
 INSERT INTO `planet` (`planet_id`, `planet_name`, `tick`, `last_tick_datetime`) VALUES
-(1, 'Capitalis', 1, '2013-12-16 01:05:34');
+(1, 'Capitalis', 1, '2013-12-01 01:05:34');
 
 -- --------------------------------------------------------
 
